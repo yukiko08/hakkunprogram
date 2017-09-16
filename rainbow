@@ -9,7 +9,6 @@ var i=0
 function oku(hankei){
     if(27>=hankei&&hankei>26){
         crab.place("wool",14)
-            console.log(hankei)
     }else{
         if(26>=hankei&&hankei>25){
         crab.place("wool",4)
@@ -54,7 +53,7 @@ for(var i=0;i<28;i++){
 }
 
 //もう半分を実行
-for(i;i>0;i--){
+for(i;i>=0;i--){
     //半径の長さを計算
     hannkei=Math.sqrt((j*j+i*i))
     //oku関数を実行
