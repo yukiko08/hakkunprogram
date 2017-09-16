@@ -1,0 +1,79 @@
+//虹
+
+//半径という変数の宣言
+var hannkei= 0
+var j=0
+var i=0
+
+//何色のブロックを置くか判定している関数だよ↓
+function oku(hankei){
+    if(27>=hankei&&hankei>26){
+        crab.place("wool",14)
+            console.log(hankei)
+    }else{
+        if(26>=hankei&&hankei>25){
+        crab.place("wool",4)
+    }else{
+        if(25>=hankei&&hankei>24){
+        crab.place("wool",5)
+    }else{
+        if(24>=hankei&&hankei>23){
+        crab.place("wool",11)
+    }else{
+        if(23>=hankei&&hankei>22){
+        crab.place("wool",10)
+    }
+    }
+    }
+    }
+    }
+}
+
+//ここからメイン！
+for(var i=0;i<28;i++){
+    //半径の長さを計算
+    hannkei=Math.sqrt((j*j+i*i))
+    //oku関数を実行
+    oku(hannkei)
+    //はっくんがいる位置を保存
+    crab.setHome("start")
+    for(var j=0;j<28;j++){//27回まで繰り返す
+    //右に一つずつ移動t
+        crab.stepRight()
+    //半径を計算
+        hannkei=Math.sqrt((j*j+i*i))
+    //oku関数を実行
+        oku(hannkei)
+    }
+    
+    //保存した位置に移動
+    crab.home("start")
+    j=0//jを0に戻す
+    //一つ上に上がる
+    crab.up()
+}
+
+//もう半分を実行
+for(i;i>0;i--){
+    //半径の長さを計算
+    hannkei=Math.sqrt((j*j+i*i))
+    //oku関数を実行
+    oku(hannkei)
+    crab.setHome("start")
+    //はっくんがいる位置を保存
+    for(var j=0;j<28;j++){//27回繰り返す
+    //左に一つずつ移動
+        crab.stepLeft()
+    //半径を計算
+        hannkei=Math.sqrt((j*j+i*i))
+    //oku関数を実行
+        oku(hannkei)
+    }
+    //保存した位置に移動
+    crab.home("start")
+    j=0//jを0に戻す
+    //一つ下がる
+    crab.down()
+
+}
+
